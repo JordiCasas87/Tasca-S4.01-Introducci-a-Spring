@@ -26,7 +26,7 @@ public class UserController {
         ArrayList<User> userFinded = new ArrayList<>();
 
         for (User userByName : userList) {
-            if (userByName.getName().equalsIgnoreCase(name)) {
+            if (userByName.getName().toLowerCase().contains(name.toLowerCase())) {
                 userFinded.add(userByName);
                 return userFinded;
             }
