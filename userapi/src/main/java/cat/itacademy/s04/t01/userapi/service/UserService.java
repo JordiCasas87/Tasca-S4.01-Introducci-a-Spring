@@ -1,4 +1,9 @@
 package cat.itacademy.s04.t01.userapi.service;
 
-public class UserService {
+public interface UserService {
+    //getAllUser
+    //getUserByName
+    //getUserById
+    //createUser
+
 }
