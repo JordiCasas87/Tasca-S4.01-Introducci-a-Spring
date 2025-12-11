@@ -1,13 +1,13 @@
 package cat.itacademy.s04.t01.userapi.controllers;
-
 import cat.itacademy.s04.t01.userapi.models.User;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
+
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
-
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MvcResult;
@@ -19,8 +19,9 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-@WebMvcTest(UserController.class)
-public class UserControllerTest {
+@SpringBootTest
+@AutoConfigureMockMvc
+public class UserIntegrationTest {
 
     @Autowired
     private MockMvc mockMvc;
@@ -138,9 +139,6 @@ public class UserControllerTest {
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$[0].name").value("Jordi"))
                 .andExpect(jsonPath("$.length()").value(1));
-
-
-
 
     }
 
