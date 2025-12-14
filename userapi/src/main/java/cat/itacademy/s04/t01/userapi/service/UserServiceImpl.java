@@ -18,15 +18,18 @@ public class UserServiceImpl implements UserService{
         this.userRepository = userRepository;
     }
 
+
     @Override
     public User createUser(User user) {
         return userRepository.save(user);
     }
 
+
     @Override
     public List <User> getAllUser () {
         return userRepository.findAll();
     }
+
 
     @Override
     public List <User> getUserByName(String name) {
