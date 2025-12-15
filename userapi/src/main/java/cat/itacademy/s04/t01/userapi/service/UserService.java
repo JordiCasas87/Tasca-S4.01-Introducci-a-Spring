@@ -10,6 +10,6 @@ public interface UserService {
     User createUser (User user);
     List <User> getAllUser ();
     List <User> getUserByName (String name);
-    Optional<User> getUserById (UUID id);
+    User getUserById (UUID id);
     boolean existsByEmail (String email);
 }

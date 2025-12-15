@@ -92,7 +92,7 @@ public class UserIntegrationTest {
         // Espera 404
         UUID idFalse = UUID.randomUUID();
 
-        User user = new User("Pepe","pepe@odioElTest.joder");
+        /*User user = new User("Pepe","pepe@odioElTest.joder");
         String userJson = objectMapper.writeValueAsString(user);
 
         MvcResult result =  mockMvc.perform(post("/users")
@@ -105,6 +105,8 @@ public class UserIntegrationTest {
         String responseJson = result.getResponse().getContentAsString();
 
         User userMapper = objectMapper.readValue(responseJson,User.class);
+        */
+
 
         UUID id = idFalse;
 

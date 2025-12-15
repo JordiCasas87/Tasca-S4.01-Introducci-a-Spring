@@ -46,19 +46,16 @@ public class UserController {
 
     // obtener usuario por id
     @GetMapping("/users/{id}")
-    public Optional<User> getUserId (@PathVariable UUID id){
+    public User getUserId (@PathVariable UUID id){
         return userService.getUserById(id);
 
     }
 
     //exites por email booleano
-
-    @GetMapping("/users/email/{email}")
+    @GetMapping("/users/email/{email}") //no necesario, es para lógica interna de la app
     public Boolean getUserbyEmail (@PathVariable String email){
         return userService.existsByEmail(email);
 
     }
-
-
 
 }
